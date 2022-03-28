@@ -1,0 +1,59 @@
+import mongoose  from "mongoose";
+const schema = new mongoose.Schema({
+    movieName:{
+        type:String,
+        required:true
+    },
+    image:{
+        type:String,
+        required:true
+    },
+    imageInfor:{
+        type:String,
+        required:true
+    },
+    year:{
+        type:String,
+        required:true
+    },
+    performer:{
+        type:String,
+        required:true
+    },
+    category:{
+        type:String,
+        required:true
+    },
+    age:{
+        type:String,
+        required:true
+    },
+    espisodes:[
+        {
+            urlMovie:{
+                type:String,
+                required:true
+            },
+            espisode:{
+                type:String,
+                required:true
+            },
+            urlImage:{
+                type:String,
+                required:true
+            },
+            content:{
+                type:String,
+                required:true
+            },
+            time:{
+                type:String,
+                required:true
+            },
+        }
+    ]
+},{
+    timestamps:true,
+}
+)
+export const FilmsModels =mongoose.model("films",schema)
