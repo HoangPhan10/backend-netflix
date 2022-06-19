@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build":"webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,7 +14,8 @@
     "body-parse": "^0.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
-    "mongoose": "^6.2.3"
+    "mongoose": "^6.2.3",
+    "webpack": "^5.73.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
