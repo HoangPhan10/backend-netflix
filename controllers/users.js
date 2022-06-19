@@ -8,6 +8,15 @@ export const getUser = async (req, res)=>{
     res.status(500).json({error:err})
    }
 }
+export const getUserId = async (req,res)=>{
+  const id  = req.query.id
+  try {
+    const users = await UsersModel.findOne({_id:id});
+    res.status(200).json(users)
+   }catch(err){
+    res.status(500).json({error:err})
+   }
+}
 export const createUser = async (req, res)=>{
   try {
       const newUser =req.body;
@@ -21,7 +30,7 @@ export const createUser = async (req, res)=>{
 export const updateUser =async (req, res)=>{
   try {
       const updateUser =req.body;
-      const user = await UsersModel.findOneAndUpdate({_id:updateUser._id},updateUser,{new:true})
+      const user = await UsersModel.findOneAndUpdate({_id:updateUser.id},updateUser,{new:true})
     res.status(200).json(user)
   } catch (err) {
     res.status(500).json({error:err})
